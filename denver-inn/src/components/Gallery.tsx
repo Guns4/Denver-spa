@@ -67,7 +67,7 @@ export default function Gallery() {
                     <div className="w-24 h-[1px] bg-[#D4AF37]/30 mx-auto mt-8"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {items.map((item, index) => (
                         <motion.div
                             key={item.id}
@@ -75,21 +75,21 @@ export default function Gallery() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative h-[400px] overflow-hidden rounded-2xl bg-white/5 border border-white/10"
+                            className="group relative h-[350px] md:h-[400px] overflow-hidden rounded-2xl bg-white/5 border border-white/10"
                         >
                             <Image
                                 src={item.url}
                                 alt={item.title}
                                 fill
-                                className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
+                                className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[10%] md:grayscale-[30%] group-hover:grayscale-0"
                             />
 
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                                <p className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            {/* Overlay - visible on hover (desktop) or always subtle on mobile */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
+                                <p className="text-[#D4AF37] text-[10px] md:text-xs uppercase tracking-[0.3em] mb-2 translate-y-0 md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                     {item.category}
                                 </p>
-                                <h3 className="text-xl font-serif text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                                <h3 className="text-lg md:text-xl font-serif text-white translate-y-0 md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                                     {item.title}
                                 </h3>
                             </div>

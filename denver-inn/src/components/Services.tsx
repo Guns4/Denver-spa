@@ -33,8 +33,8 @@ export default function Services() {
     }
 
     return (
-        <section id="services" className="py-20 px-6 max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif text-[#e2d1c3] text-center mb-16">
+        <section id="services" className="py-16 md:py-20 px-6 max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-serif text-[#e2d1c3] text-center mb-10 md:mb-16">
                 Our Treatments
             </h2>
 
