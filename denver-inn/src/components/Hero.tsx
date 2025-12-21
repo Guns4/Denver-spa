@@ -10,7 +10,7 @@ export default function Hero() {
             {/* 1. BACKGROUND IMAGE (Fixed/Parallax feel) */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/assets/_DSC4744.JPG" // Ganti dengan gambar background pilihan Anda
+                    src="/assets/_DSC1997.JPG" // Ganti dengan gambar background pilihan Anda
                     alt="Spa Ambience Background"
                     fill
                     className="object-cover opacity-40" // Opacity dikurangi agar text terbaca
@@ -25,20 +25,21 @@ export default function Hero() {
 
                 {/* Animasi Antigravity untuk Gambar Utama (Layer 1) */}
                 <motion.div
-                    animate={{ y: [0, -20, 0] }} // Bergerak naik 20px lalu turun lagi
+                    animate={{ y: [0, -15, 0] }} // Gerak lebih halus
                     transition={{
-                        duration: 6, // Durasi 6 detik (sangat lambat & halus)
+                        duration: 5,
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="mb-6 w-64 md:w-96 relative h-40 md:h-60"
+                    className="mb-8"
                 >
                     <Image
-                        src="/assets/Denver Inn Art.JPG" // Gambar tulisan/logo artistik Anda
+                        src="/assets/Denver Inn Art.JPG"
                         alt="Denver Inn Art"
-                        width={120} // Sesuaikan ukuran lebar logo
-                        height={50} // Sesuaikan ukuran tinggi
-                        className="object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]" // Efek glow emas tipis
+                        width={320} // Ukuran proporsional lebih besar namun tetap sleek
+                        height={140}
+                        className="object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                        priority
                     />
                 </motion.div>
 
@@ -47,7 +48,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 1 }}
-                    className="text-gray-200 text-lg md:text-xl font-light tracking-[0.2em] mb-10 max-w-2xl"
+                    className="text-gray-200 text-sm md:text-base font-light tracking-[0.3em] mb-12 whitespace-nowrap overflow-hidden text-center"
                 >
                     LUXURY AMBIENCE EXPERIENCE • PREMIUM RELAXATION
                 </motion.p>

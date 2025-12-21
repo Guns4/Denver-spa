@@ -18,7 +18,7 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md py-4" : "bg-transparent py-6"
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md py-2" : "bg-transparent py-4"
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
@@ -27,8 +27,8 @@ export default function Navbar() {
                     <Image
                         src="/assets/denver SPA tanpa nama.png" // Path logo Anda
                         alt="Denver Inn Logo"
-                        width={120} // Sesuaikan ukuran lebar logo
-                        height={50} // Sesuaikan ukuran tinggi
+                        width={90} // Ukuran lebih kecil agar profesional
+                        height={35}
                         className="object-contain"
                         priority
                     />
