@@ -34,7 +34,7 @@ export default function Hero() {
                     className="mb-6 w-64 md:w-96 relative h-40 md:h-60"
                 >
                     <Image
-                        src="/assets/Logo.JPG" // Gambar tulisan/logo artistik Anda
+                        src="/assets/Logo_tengah.JPG" // Gambar tulisan/logo artistik Anda
                         alt="Denver Inn Art"
                         width={120} // Sesuaikan ukuran lebar logo
                         height={50} // Sesuaikan ukuran tinggi
