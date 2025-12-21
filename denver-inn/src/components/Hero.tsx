@@ -34,9 +34,10 @@ export default function Hero() {
                     className="mb-6 w-64 md:w-96 relative h-40 md:h-60"
                 >
                     <Image
-                        src="/assets/Logo.png" // Gambar tulisan/logo artistik Anda
+                        src="/assets/Logo.jpg" // Gambar tulisan/logo artistik Anda
                         alt="Denver Inn Art"
-                        fill
+                        width={120} // Sesuaikan ukuran lebar logo
+                        height={50} // Sesuaikan ukuran tinggi
                         className="object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]" // Efek glow emas tipis
                     />
                 </motion.div>
