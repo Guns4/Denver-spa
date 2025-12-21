@@ -3,6 +3,7 @@ import Hero from "@/src/components/Hero";
 import Services from "@/src/components/Services";
 import LocationCard from "@/src/components/LocationCard";
 import AdBanner from "@/src/components/AdBanner";
+import Gallery from "@/src/components/Gallery";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         </div>
 
         <Services />
+        <Gallery />
 
         <div className="mt-24">
           <LocationCard />
