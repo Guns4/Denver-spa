@@ -6,39 +6,33 @@ import Image from "next/image";
 const items = [
     {
         id: 1,
-        url: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=1000",
-        title: "Therapeutic Rooms",
-        category: "Ambiance",
+        url: "/images/gallery/grand-reception.jpg",
+        title: "Grand Lobby",
+        category: "Welcome",
     },
     {
         id: 2,
-        url: "https://images.unsplash.com/photo-1544161515-4af6b1d462c2?q=80&w=1000",
-        title: "Professional Massage",
-        category: "Treatments",
-    },
-    {
-        id: 3,
-        url: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1000",
-        title: "Aromatic Essential Oils",
+        url: "/images/gallery/relaxation-lounge.jpg",
+        title: "Executive Lounge",
         category: "Relaxation",
     },
     {
+        id: 3,
+        url: "/images/gallery/vip-suite-bedroom.jpg",
+        title: "VIP Royal Suite",
+        category: "Accommodation",
+    },
+    {
         id: 4,
-        url: "https://images.unsplash.com/photo-1519415510236-8559b1985622?q=80&w=1000",
-        title: "Hot Stone Therapy",
-        category: "Healing",
+        url: "/images/gallery/luxury-bathroom.jpg",
+        title: "Private Spa & Jacuzzi",
+        category: "Wellness",
     },
     {
         id: 5,
-        url: "https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?q=80&w=1000",
-        title: "Zen Water Feature",
-        category: "Ambiance",
-    },
-    {
-        id: 6,
-        url: "https://images.unsplash.com/photo-1620733723572-11c53f73a2ad?q=80&w=1000",
-        title: "Luxury Lounge",
-        category: "Ambiance",
+        url: "/images/gallery/comfort-zone.jpg",
+        title: "Premium Therapy Room",
+        category: "Treatment",
     },
 ];
 
