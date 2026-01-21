@@ -6,8 +6,8 @@ import Image from "next/image";
 
 export default function LocationCard() {
     const handleGetDirections = () => {
-        const lat = -6.225014; // Contoh Lat Jakarta Selatan (Senopati area)
-        const lng = 106.809715; // Contoh Long
+        const lat = -6.918456; // Bandung coordinates
+        const lng = 107.608321;
 
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
             (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -64,7 +64,7 @@ export default function LocationCard() {
                             <MapPin className="w-6 h-6 text-[#D4AF37] mt-1 shrink-0" />
                             <div>
                                 <p className="font-medium text-white tracking-wide">Denver Inn Luxury Spa</p>
-                                <p className="text-sm opacity-70 leading-relaxed">Jl. Senopati No. 88, Kebayoran Baru<br />Jakarta Selatan, 12190</p>
+                                <p className="text-sm opacity-70 leading-relaxed">Komp. Banceuy Permai<br />Jl. ABC No.112, Braga<br />Kec. Sumur Bandung, Kota Bandung<br />Jawa Barat 40111</p>
                             </div>
                         </div>
 
