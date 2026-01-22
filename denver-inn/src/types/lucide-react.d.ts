@@ -68,4 +68,5 @@ declare module 'lucide-react' {
     export const Share2: Icon;
     export const Gift: Icon;
     export const Copy: Icon;
+    export const Eye: Icon;
 }
