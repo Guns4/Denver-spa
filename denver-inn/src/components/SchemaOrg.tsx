@@ -7,7 +7,7 @@ export default function SchemaOrg() {
         "name": "Denver Inn Executive Spa",
         "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200",
         "url": "https://denver-inn-spa.com", // Ganti dengan domain asli jika sudah ada
-        "telephone": "+628123456789", // Ganti dengan nomor asli
+        "telephone": "+628112251337", // Ganti dengan nomor asli
         "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",
@@ -34,8 +34,8 @@ export default function SchemaOrg() {
                     "Saturday",
                     "Sunday"
                 ],
-                "opens": "10:00",
-                "closes": "22:00"
+                "opens": "11:00",
+                "closes": "24:00"
             }
         ],
         "sameAs": [

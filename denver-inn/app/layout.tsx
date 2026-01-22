@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/src/components/SmoothScroll";
 import Script from "next/script";
 import SchemaOrg from "@/src/components/SchemaOrg";
+import StickyBottomCTA from "@/src/components/StickyBottomCTA";
+import { BookingProvider } from "@/src/context/BookingContext";
+import { Toaster } from "sonner";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -11,77 +14,51 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700"],
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#D4AF37",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false, // App-like feel, prevents zooming
+};
+
 export const metadata: Metadata = {
-  title: "Denver Inn Executive Spa — Premium Men’s Spa & Massage Bandung",
-  description: "Pusat relaksasi & massage khusus pria di pusat Kota Bandung. Terletak di Jl. ABC Braga. Spesialis Sport Massage, Executive Therapy, dan pemulihan kebugaran untuk pria modern.",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Denver Inn",
+  },
+  title: {
+    template: "%s | Denver Inn Executive Spa Bandung",
+    default: "Denver Inn Executive Spa - The Gentleman's Sanctuary in Bandung",
+  },
+  description: "Experience premium relaxation and executive therapy at Denver Inn Spa Bandung. Luxury massage, VIP suites, and professional therapists in Braga.",
   keywords: [
-    'Spa Pria Bandung',
-    'Massage Pria Braga',
-    'Pijat Panggilan Bandung',
-    'Sport Massage Bandung',
-    'Executive Spa',
-    'Denver Inn',
-    'Refleksi Pria Bandung',
-    'Pijat Otot & Kebugaran',
-    'Spa Pria Braga',
-    'Massage Pria Bandung',
-    'Pijat Pria Bandung',
-    'Spa Eksklusif Pria Bandung',
-    'Massage Profesional Bandung',
-    'Pijat Relaksasi Bandung',
-    'Pijat Kesehatan Bandung',
-    'Refleksi Kaki Bandung',
-    'Body Massage Bandung',
-    'Spa Pria Terdekat',
-    'Massage Pria Terdekat',
-    'Pijat Panggilan Pria Bandung',
-    'Spa Hotel Bandung',
-    'Massage Executive Bandung',
-    'Spa Premium Bandung',
-    'Pijat Pegal Bandung',
-    'Pijat Capek Kerja Bandung',
-    'Sport Massage Pria Bandung',
-    'Massage Recovery Bandung',
-    'Pijat Kebugaran Pria',
-    'Denver Inn Spa Bandung',
-    'Spa Denver Inn Braga',
-    'Spa Denver Inn',
-    'Denver Bandung',
-    'Denver Club',
-    'Denver club bandung',
-    'Denver karaoke',
-    'Executive Club Bandung',
-    'Club Malam Bandung',
-    'Exclusive Club Bandung',
-    'Executive Karaoke Bandung',
-    'Karaoke Executive Bandung',
-    'Private Karaoke Bandung',
-    'Karaoke Pria Bandung',
-    'Karaoke VIP Bandung',
-    'Club Executive Braga',
-    'Night Club Bandung',
+    "Spa Pria Bandung", "Masage Pria Braga", "Executive Spa", "Denver Inn", "Refleksi Pria"
   ],
   openGraph: {
-    title: "Denver Inn Executive Spa — Premium Men’s Spa & Massage Bandung",
-    description: "Pusat relaksasi & massage khusus pria di pusat Kota Bandung. Terletak di Jl. ABC Braga. Spesialis Sport Massage, Executive Therapy, dan pemulihan kebugaran untuk pria modern.",
     type: "website",
     locale: "id_ID",
+    url: "https://denver-inn.com",
+    title: "Denver Inn Executive Spa - The Gentleman's Sanctuary",
+    description: "Premium relaxation in the heart of Bandung. Book your executive massage today.",
     siteName: "Denver Inn Executive Spa",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200",
+        url: "https://denver-inn.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Denver Inn Luxury Spa Ambience",
+        alt: "Denver Inn Spa Ambience",
       },
     ],
+  },
+  alternates: {
+    canonical: "https://denver-inn.com",
   },
 };
 
@@ -93,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${playfair.variable} antialiased`}
+        className={`${inter.variable} ${playfair.variable} antialiased font-sans`}
       >
         <Script
           id="google-adsense"
@@ -103,7 +80,11 @@ export default function RootLayout({
         />
         <SchemaOrg />
         <SmoothScroll>
-          {children}
+          <BookingProvider>
+            {children}
+            <StickyBottomCTA />
+          </BookingProvider>
+          <Toaster position="top-center" richColors />
         </SmoothScroll>
       </body>
     </html>

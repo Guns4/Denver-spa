@@ -13,13 +13,24 @@ declare global {
 }
 
 export default function AdBanner({ dataAdSlot }: AdBannerProps) {
+    const isProduction = process.env.NODE_ENV === "production";
+
     useEffect(() => {
-        try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (err) {
-            console.error("AdSense Error:", err);
+        // Only load ads in production
+        if (isProduction && typeof window !== "undefined") {
+            try {
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (err) {
+                console.error("AdSense Error:", err);
+            }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // Don't render anything in development to avoid errors
+    if (!isProduction) {
+        return null;
+    }
 
     return (
         <div className="w-full flex flex-col items-center my-12">

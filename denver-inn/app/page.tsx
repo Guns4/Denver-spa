@@ -1,40 +1,32 @@
 import Navbar from "@/src/components/Navbar";
-import Hero from "@/src/components/Hero";
+import CinematicHero from "@/src/components/Hero";
 import Services from "@/src/components/Services";
+import Footer from "@/src/components/Footer";
+import Reviews from "@/src/components/Reviews";
+import QuickExitButton from "@/src/components/QuickExitButton";
 import LocationCard from "@/src/components/LocationCard";
-import AdBanner from "@/src/components/AdBanner";
-import Gallery from "@/src/components/Gallery";
 
 export default function Home() {
   return (
-    <main className="bg-[#1a1a1a] min-h-screen text-white font-sans">
+    <main className="bg-black min-h-screen text-white font-sans">
       <Navbar />
-      <Hero />
 
-      <div className="relative z-20 bg-[#1a1a1a] flex flex-col pb-24">
+      {/* Cinematic Hero with Parallax */}
+      <CinematicHero />
 
-        {/* Top Ad Banner */}
-        <div className="my-12">
-          <AdBanner dataAdSlot="1234567890" />
-        </div>
+      {/* Phase 46: Privacy Protection */}
+      <QuickExitButton />
 
-        {/* Services Section */}
-        <div className="mt-12 mb-8 text-center px-4">
-          <h2 className="text-4xl md:text-5xl font-serif text-[#D4AF37] mb-4">Our Signature Treatments</h2>
-          <div className="w-24 h-[1px] bg-[#D4AF37]/50 mx-auto my-6"></div>
-        </div>
+      {/* Main Content - Generous Spacing (py-24/py-32) */}
+      <div className="relative z-20">
 
-        <Services />
-        <Gallery />
-
-        <div className="mt-24">
+        {/* Location Section */}
+        <div className="py-12 md:py-16 bg-[#0a0a0a]">
           <LocationCard />
         </div>
 
-        {/* Bottom Ad Banner */}
-        <div className="mt-20">
-          <AdBanner dataAdSlot="1234567890" />
-        </div>
+        {/* Footer */}
+        <Footer />
       </div>
     </main>
   );
